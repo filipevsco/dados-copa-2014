@@ -1,11 +1,11 @@
-import os 
-import sys
+import os
 import zipfile
-
+import sys
 
 def main(path):
     if not os.path.exists(path):
-        print(f"Arquivo {path} não existe.")
+        print("Arquivo {} não existe.".format(path))
+        sys.exit(-1)
     else:
         zfile = zipfile.ZipFile(path)
         zfile.extractall()
