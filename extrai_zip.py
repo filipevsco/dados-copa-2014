@@ -10,3 +10,7 @@ def main(path):
         zfile = zipfile.Zipfile(path)
         zfile.extractall()
         print("Arquivos extraídos")
+        
+
+if __name__ == "__main__":
+    return main(argv[1])
