@@ -23,7 +23,12 @@ def main():
         for col in val:
             if col[0] in keys:
                 if not col[0] == meta[key][0][0]:
-                    relationships[key]
+                    relationships[key] = keys[col[0]]
+                    
+    opcao = prompt()
+    while opcao != "s":
+        if opcao == "l":
+            pass
 
 if __name__ == "__main__":
     main()
