@@ -55,7 +55,20 @@ def main():
     opcao = prompt()
     while opcao != "s":
         if opcao == "l":
-            pass
+            for entity_name in meta.keys():
+                print(entity_name)
+                
+        elif opcao == "d":
+            entity_name = input('Nome da entidade: ')
+            for col in meta[entity_name]:
+                print(col)
+                
+        elif opcao == "r":
+            entity_name = input('Nome da entidade: ')
+            other_entity = relationships[entity_name]
+            print
+    
+        
 
 if __name__ == "__main__":
     main()
