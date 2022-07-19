@@ -3,9 +3,13 @@ import os
 
 def main():
     # dicionáriocde nome entidade -> atributos
-    meta - {}
+    meta = {}
     
-    # dicionario 
+    # dicionario identificador -> nome entidade
+    keys = {}
+    
+    # dicionario de relacionamentos
+    relationchips = {}
 
 if __name__ == "__main__":
     main()
