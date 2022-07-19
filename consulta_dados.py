@@ -12,6 +12,18 @@ def read_lines(filename):
     return data
 
 
+def read_metadata(filename):
+    metadata = []
+    for column in read_lines(filename):
+        if column:
+            metadata.append(tuple(column.split("\t")[:3]))
+    return metadata
+    
+    
+def prompt():
+    print("\nO que deseja ver?")
+    print("(l) Listar entidadades")
+
 def main():
     # dicionáriocde nome entidade -> atributos
     meta = {}
