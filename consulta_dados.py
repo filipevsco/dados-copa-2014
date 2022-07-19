@@ -1,5 +1,8 @@
 import os
 
+def extract_name(name):
+    return name.split(".")[0]
+
 
 def main():
     # dicionáriocde nome entidade -> atributos
