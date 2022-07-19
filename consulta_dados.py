@@ -23,6 +23,10 @@ def read_metadata(filename):
 def prompt():
     print("\nO que deseja ver?")
     print("(l) Listar entidadades")
+    print("(d) Exibir atributos de uma entidade")
+    print("(r) Exbir referencias de uma entidade")
+    print("(s) Sair do programa")
+    return input('')
 
 def main():
     # dicionáriocde nome entidade -> atributos
