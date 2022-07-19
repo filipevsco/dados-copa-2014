@@ -1,7 +1,15 @@
 import os
 
+
 def extract_name(name):
     return name.split(".")[0]
+
+
+def read_lines(filename):
+    _file = open(os.path.join("data/meta-data", filename), "rt")
+    data = _file.read().split("\n")
+    _file.close()
+    return data
 
 
 def main():
