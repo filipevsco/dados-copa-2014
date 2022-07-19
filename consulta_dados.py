@@ -41,9 +41,9 @@ def main():
     for meta_data_file in os.listdir("data/meta-data"):
         table_name = extract_name(meta_data_file)
         attributes = read_metadata(meta_data_file)
-        identifier = atributes[0]
+        identifier = attributes[0]
         
-        meta[table_name] = atributes
+        meta[table_name] = attributes
         keys[identifier] = table_name
         
     for keys, val in meta.items():
@@ -66,9 +66,11 @@ def main():
         elif opcao == "r":
             entity_name = input('Nome da entidade: ')
             other_entity = relationships[entity_name]
-            print
-    
-        
+            print(other_entity)
+        else:
+            print("Inexistente\n")
+        opcao = prompt()
+
 
 if __name__ == "__main__":
     main()
