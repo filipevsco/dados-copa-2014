@@ -70,3 +70,4 @@ class Relationship:
         self. __from = __from
         self.__to = to
         self.__on = on
+        
