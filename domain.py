@@ -44,8 +44,8 @@ class DataTable:
         self.__referenced = []
         self.__data = []
 
-    def add_column(self, name, kind, description):
-        column = Column(name, kind, description)
+    def add_column(self, name, kind, description=""):
+        column = Column(name, kind, description=description)
         self.__columns.append(column)
         return column
 
