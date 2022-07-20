@@ -55,4 +55,18 @@ class Column:
 class Relationship:
     """Classe que representa uma relação entre DataTables
     
-       Essa classe tem todas as informações que identificam
+       Essa classe tem todas as informações que identificam um relacionamento entre tabelas. Em qual coluna ele existe, de onde vem e pra onde vai.
+    """
+    def __init__(self, name, __from, to, on):
+        """Construtor
+        
+            Args:
+                name: None
+                from: Tabela de onde sai
+                to: Tabela pra onde vai
+                on: instância de coluna onde existe
+        """
+        self.__name = name
+        self. __from = __from
+        self.__to = to
+        self.__on = on
