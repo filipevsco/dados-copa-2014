@@ -59,6 +59,10 @@ class DataTable:
         """
         relationship = Relationship(name, self, to, on):
             self.__references.append(relationship)
+            
+    def add_referenced(self, name, by, on):
+        relationship = Relationship(name, by, self, on):
+        self.__referenced.append(relationship)
 
 
 class Column:
