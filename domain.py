@@ -40,6 +40,8 @@ class DataTable:
         """
         self.__name = name
         self.__columns = []
+        self.__references = []
+        self.__referenced = []
         self.__data = []
 
     def add_column(self, name, kind, description):
