@@ -50,3 +50,9 @@ class Column:
         self.__name = name
         self.__kind = kind
         self.__description = description
+
+
+class Relationship:
+    """Classe que representa uma relação entre DataTables
+    
+       Essa classe tem todas as informações que identificam
