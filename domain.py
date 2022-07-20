@@ -48,6 +48,17 @@ class DataTable:
         column = Column(name, kind, description=description)
         self.__columns.append(column)
         return column
+        
+    def add_references(self, name, to, on):
+        """Cria uma referência dessa tabela para que aponta para essa.
+        
+            Args:
+                name: nome da relacao
+                to: instância da tabela apontada
+                on: instância em que existe a relação
+        """
+        relationship = Relationship(name, self, to, on):
+            self.__references.append(relationship)
 
 
 class Column:
