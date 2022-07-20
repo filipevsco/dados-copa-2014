@@ -50,7 +50,7 @@ class DataTable:
         return column
         
     def add_references(self, name, to, on):
-        """Cria uma referência dessa tabela para que aponta para essa.
+        """Cria uma referência desss tabela para outra tabela.
         
             Args:
                 name: nome da relacao
@@ -61,6 +61,13 @@ class DataTable:
             self.__references.append(relationship)
             
     def add_referenced(self, name, by, on):
+        """Cria uma referência para outra tabela que aponta para essa tabela.
+        
+            Args:
+                name: nome da relação
+                by: instancia da tabela que aponta para essa.
+                on: instância coluna que existe a relacao 
+        """
         relationship = Relationship(name, by, self, on):
         self.__referenced.append(relationship)
 
