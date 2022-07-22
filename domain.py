@@ -1,23 +1,25 @@
 class Relationship:
     """Classe que representa uma relação entre DataTables
     
-       Essa classe tem todas as informações que identificam um relacionamento entre tabelas. Em qual coluna ele existe, de onde vem e pra onde vai.
+       Essa classe tem todas as informações que identificam um relacionamento entre tabelas.
+       Em qual coluna ele existe, de onde vem e pra onde vai.
     """
+
     def __init__(self, name, __from, to, on):
         """Construtor
         
             Args:
                 name: None
-                from: Tabela de onde sai
+                __from: Tabela de onde sai
                 to: Tabela pra onde vai
                 on: instância de coluna onde existe
         """
         self.__name = name
-        self. __from = __from
+        self.__from = __from
         self.__to = to
         self.__on = on
-        
-        
+
+
 class DataTable:
     """
     Representa uma Tabela de dados.
@@ -31,6 +33,7 @@ class DataTable:
         columns: [Lista de colunas]
         data: [Lista de dados]
     """
+
     def __init__(self, name):
         """
         Construtor
@@ -48,7 +51,7 @@ class DataTable:
         column = Column(name, kind, description=description)
         self.__columns.append(column)
         return column
-        
+
     def add_references(self, name, to, on):
         """Cria uma referência desss tabela para outra tabela.
         
@@ -59,7 +62,7 @@ class DataTable:
         """
         relationship = Relationship(name, self, to, on)
         self.__references.append(relationship)
-            
+
     def add_referenced(self, name, by, on):
         """Cria uma referência para outra tabela que aponta para essa tabela.
         
@@ -83,7 +86,8 @@ class Column:
             kind: Tipo de Dado (varchar, bigint, numeric)
             description: Descrição da coluna
         """
-    def __init__(self):
+
+    def __init__(self, name, kind, description=""):
         """Construtor
 
             Args:
@@ -94,3 +98,24 @@ class Column:
         self.__name = name
         self.__kind = kind
         self.__description = description
+        self.__is_pk = False
+
+    def __str__(self):
+        __str = "Col {} : {} {}".format(self.__name,
+                                        self.__kind,
+                                        self.__description)
+        return __str
+
+
+class PrimaryKey(Column):
+    def __int__(self, table, name, kind, description=""):
+        super().__init__(name, kind, description=description)
+        self.__is_pk = True
+
+    def __str__(self):
+        __str = "Col: {} : {} {}".format(self.__name,
+                                         self.__kind,
+                                         self.__description)
+        return "{} - {}".format('PK', __str)
+
+
