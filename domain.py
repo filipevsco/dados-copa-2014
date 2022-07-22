@@ -1,3 +1,6 @@
+from decimal import Decimal
+
+
 class Relationship:
     """Classe que representa uma relação entre DataTables
     
@@ -101,10 +104,24 @@ class Column:
         self.__is_pk = False
 
     def __str__(self):
-        __str = "Col {} : {} {}".format(self.__name,
+        return "Col {} : {} {}".format(self.__name,
                                         self.__kind,
                                         self.__description)
-        return __str
+
+    def validate(self, data):
+        if self.__kind == 'bigint':
+            if isinstance(data, int):
+                return True
+        elif self.__kind == 'varchar':
+            if isinstance(data, str):
+                return True
+            return False
+        elif self.__kind == 'numeric':
+            try:
+                val = Decimal(data)
+            except:
+                return False
+            return True
 
 
 class PrimaryKey(Column):
@@ -113,9 +130,7 @@ class PrimaryKey(Column):
         self.__is_pk = True
 
     def __str__(self):
-        __str = "Col: {} : {} {}".format(self.__name,
+        _str = "Col: {} : {} {}".format(self.__name,
                                          self.__kind,
                                          self.__description)
-        return "{} - {}".format('PK', __str)
-
-
+        return "{} - {}".format('PK', _str)
