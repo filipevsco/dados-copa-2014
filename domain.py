@@ -57,8 +57,8 @@ class DataTable:
                 to: instância da tabela apontada
                 on: instância em que existe a relação
         """
-        relationship = Relationship(name, self, to, on):
-            self.__references.append(relationship)
+        relationship = Relationship(name, self, to, on)
+        self.__references.append(relationship)
             
     def add_referenced(self, name, by, on):
         """Cria uma referência para outra tabela que aponta para essa tabela.
@@ -68,7 +68,7 @@ class DataTable:
                 by: instancia da tabela que aponta para essa.
                 on: instância coluna que existe a relacao 
         """
-        relationship = Relationship(name, by, self, on):
+        relationship = Relationship(name, by, self, on)
         self.__referenced.append(relationship)
 
 
