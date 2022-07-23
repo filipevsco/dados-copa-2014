@@ -105,24 +105,27 @@ class Column:
 
     def __str__(self):
         return "Col {} : {} {}".format(self.__name,
-                                        self.__kind,
-                                        self.__description)
+                                       self.__kind,
+                                       self.__description)
 
-    def validate(self, data):
-        if self.__kind == 'bigint':
+
+    def __validate(kind, data):
+        if kind == 'bigint':
             if isinstance(data, int):
                 return True
-        elif self.__kind == 'varchar':
+            return False
+        elif kind == 'varchar':
             if isinstance(data, str):
                 return True
             return False
-        elif self.__kind == 'numeric':
+        elif kind == 'numeric':
             try:
                 val = Decimal(data)
             except:
                 return False
             return True
 
+    validate = staticmethod(__validate)
 
 class PrimaryKey(Column):
     def __int__(self, table, name, kind, description=""):
@@ -131,6 +134,6 @@ class PrimaryKey(Column):
 
     def __str__(self):
         _str = "Col: {} : {} {}".format(self.__name,
-                                         self.__kind,
-                                         self.__description)
+                                        self.__kind,
+                                        self.__description)
         return "{} - {}".format('PK', _str)
