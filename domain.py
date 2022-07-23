@@ -77,6 +77,19 @@ class DataTable:
         relationship = Relationship(name, by, self, on)
         self.__referenced.append(relationship)
 
+    def __get__name(self):
+        print("Getter executado")
+        return self.__name
+
+    def __set__name(self, __name):
+        print("Setter executado")
+        self.__name = __name
+
+    def __del__name(self):
+        print("Deletter executado")
+        raise AttributeError("Não pode deletar esse atributo")
+
+    name = property(__get__name, __set__name, __del__name)
 
 class Column:
     """Representa uma coluna em um DataTable
