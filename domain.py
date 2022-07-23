@@ -91,6 +91,7 @@ class DataTable:
 
     name = property(__get__name, __set__name, __del__name)
 
+
 class Column:
     """Representa uma coluna em um DataTable
 
@@ -120,7 +121,6 @@ class Column:
         return "Col {} : {} {}".format(self.__name,
                                        self.__kind,
                                        self.__description)
-
 
     def __validate(kind, data):
         if kind == 'bigint':
