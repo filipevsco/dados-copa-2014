@@ -14,3 +14,4 @@ class DataTableTest(unittest.TestCase):
         self.assertEqual(2, len(self.table.__columns))
         
         self.table.add_column('desc','varchar')
+        self.assertEqual(3, len(self.table.__columns))
