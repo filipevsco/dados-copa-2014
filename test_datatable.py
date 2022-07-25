@@ -15,3 +15,7 @@ class DataTableTest(unittest.TestCase):
         
         self.table.add_column('desc','varchar')
         self.assertEqual(3, len(self.table.__columns))
+    
+    def test_add_column_invalid_type(self):
+        a_table = DataTable('A')
+        self.assertRaises(Exception, a_table.add_column, ('col', 'invalid'))
