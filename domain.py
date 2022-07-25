@@ -77,6 +77,10 @@ class DataTable:
         relationship = Relationship(name, by, self, on)
         self.__referenced.append(relationship)
 
+    def __validate_kind(self, kind):
+        if not kind in ('bigint', 'numeric', 'varchar'):
+            raise Exception('Tipo invalido')
+
     def __get__name(self):
         print("Getter executado")
         return self.__name
