@@ -21,5 +21,11 @@ class DataTableTest(unittest.TestCase):
     
     def test_add_column_invalid_type(self):
         a_table = DataTable('A')
+        error = False
         
-        self.assertRaises(Exception, a_table.add_column, ('col', 'invalid'))
+        try:
+            a_table.add_column, ('col', 'invalid'))
+        except:
+            error = True
+            
+        
