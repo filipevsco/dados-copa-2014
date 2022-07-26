@@ -41,9 +41,10 @@ class DataTableTest(unittest.TestCase):
         self.assertEqual(1, len(a_table.references))
         self.assertEqual(0, len(a_table.referenced))
         
-        
-        
-        
+    def test_add_reverse_relationship(self):
+        a_table = DataTable('A')
+        col = a_table.add_column('BId', 'bigint')
+        b_table = DataTable('B')
         col = b_table.add_column(BId, 'bigint')
         b_table = add_referenced('A', a_table, col)
         
