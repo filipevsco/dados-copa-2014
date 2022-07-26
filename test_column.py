@@ -1,5 +1,5 @@
 import unittest
-from domain import Column
+from copa_transparente.domain import Column
 
 
 class ColumnTest(unittest.TestCase):

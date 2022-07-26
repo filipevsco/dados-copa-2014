@@ -6,7 +6,7 @@ def extract_name(name):
 
 
 def read_lines(filename):
-    _file = open(os.path.join("data/meta-data", filename), "rt")
+    _file = open(os.path.join("../../data/meta-data", filename), "rt")
     data = _file.read().split("\n")
     _file.close()
     return data
@@ -38,7 +38,7 @@ def main():
     # dicionario de relacionamentos
     relationships = {}
     
-    for meta_data_file in os.listdir("data/meta-data"):
+    for meta_data_file in os.listdir("../../data/meta-data"):
         table_name = extract_name(meta_data_file)
         attributes = read_metadata(meta_data_file)
         identifier = attributes[0]

@@ -1,6 +1,6 @@
 import unittest
 
-from domain import DataTable
+from copa_transparente.domain import DataTable
 
 
 class DataTableTest(unittest.TestCase):

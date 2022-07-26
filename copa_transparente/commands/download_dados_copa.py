@@ -27,7 +27,7 @@ def download(response, out_file):
 
 def main():
     response = request.urlopen(sys.argv[1])
-    out_file = io.FileIO("saida.zip", mode="w")
+    out_file = io.FileIO("../../saida.zip", mode="w")
     content_length = response.getheader("Content-Length")
 
     try:
