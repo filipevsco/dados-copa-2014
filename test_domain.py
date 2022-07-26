@@ -30,3 +30,10 @@ class DataTableTest(unittest.TestCase):
             
         if not error:
             self.fail('Chamada não gerou erro mas deveria')
+            
+    def test_add_relationship(self):
+        a_table = DataTable('A')
+        col = a_table.add_column('BId', 'bigint')
+        b_table = DataTable('B')
+        col = b_table.add_column(BId, 'bigint')
+        b_table = add_referenced('A', a_table, col)
