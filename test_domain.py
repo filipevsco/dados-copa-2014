@@ -4,6 +4,9 @@ from domain import DataTable
 
 
 class DataTableTest(unittest.TestCase):
+    def setUp(self):
+        self.table = DataTable("A")
+    
     def test_add_column(self):
         self.AssertEqual(0, len(self.table.__columns))
 
