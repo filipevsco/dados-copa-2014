@@ -28,4 +28,5 @@ class DataTableTest(unittest.TestCase):
         except:
             error = True
             
-        
+        if not error:
+            self.fail('Chamada não gerou erro mas deveria')
