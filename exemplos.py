@@ -19,3 +19,4 @@ def outra_funcao(func, *args):
     print('irem chamar {}'.format(func.__name__))
     return func(*args)
     
+outra_funcao(uma_funcao_com_args, [1, 2, 3])
